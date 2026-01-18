@@ -1,68 +1,41 @@
-// DARK MODE
-document.getElementById("toggle-mode").onclick = () => {
-  document.body.classList.toggle("dark-mode");
-};
-
 // MOBILE MENU
 document.getElementById("menu-toggle").onclick = () => {
   document.getElementById("nav").classList.toggle("active");
 };
 
 // TYPING EFFECT
-const typingText = [
+const words = [
   "Modern Web Design",
-  "Creative UI Experiences",
+  "Creative UI",
   "Responsive Websites"
 ];
 
-let textIndex = 0;
+let wordIndex = 0;
 let charIndex = 0;
-const typingElement = document.getElementById("typing");
+const typing = document.getElementById("typing");
 
-function typeEffect() {
-  if (charIndex < typingText[textIndex].length) {
-    typingElement.textContent += typingText[textIndex][charIndex++];
-    setTimeout(typeEffect, 100);
+function type() {
+  if (charIndex < words[wordIndex].length) {
+    typing.textContent += words[wordIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 100);
   } else {
-    setTimeout(eraseEffect, 2000);
+    setTimeout(erase, 2000);
   }
 }
 
-function eraseEffect() {
+function erase() {
   if (charIndex > 0) {
-    typingElement.textContent =
-      typingText[textIndex].substring(0, --charIndex);
-    setTimeout(eraseEffect, 50);
+    typing.textContent = words[wordIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, 50);
   } else {
-    textIndex = (textIndex + 1) % typingText.length;
-    setTimeout(typeEffect, 500);
+    wordIndex = (wordIndex + 1) % words.length;
+    setTimeout(type, 500);
   }
 }
 
-typeEffect();
-
-// LIGHTBOX
-document.querySelectorAll(".card img").forEach(img => {
-  img.onclick = () => {
-    lightbox.style.display = "flex";
-    lightboxImg.src = img.src;
-  };
-});
-
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-
-document.getElementById("close").onclick = () => {
-  lightbox.style.display = "none";
-};
-
-// FILTER
-function filterImages(type) {
-  document.querySelectorAll(".card").forEach(card => {
-    card.style.display =
-      type === "all" || card.classList.contains(type) ? "block" : "none";
-  });
-}
+type();
 
 // CONTACT FORM (DEMO)
 document.getElementById("contact-form").onsubmit = e => {
@@ -71,15 +44,3 @@ document.getElementById("contact-form").onsubmit = e => {
     "Message sent successfully ✅";
   e.target.reset();
 };
-
-// SCROLL REVEAL (FIXED)
-function revealOnScroll() {
-  document.querySelectorAll(".reveal").forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-      el.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll(); // run once on load
