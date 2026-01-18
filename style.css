@@ -13,6 +13,7 @@ body {
 /* HEADER */
 header {
   position: fixed;
+  top: 0;
   width: 100%;
   padding: 15px 30px;
   background: rgba(0,0,0,.7);
@@ -47,22 +48,34 @@ nav a {
   min-height: 100vh;
   padding: 120px 40px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-#home {
-  background:
-    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-    url("images/hero-bg.jpg");
-  background-size: cover;
-  background-position: center;
+.video-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-hero video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 2;
   color: #fff;
 }
 
 .btn {
+  display: inline-block;
   margin-top: 20px;
   padding: 12px 25px;
   background: #ff9800;
@@ -74,12 +87,12 @@ nav a {
 /* FILTERS */
 .filters {
   text-align: center;
-  margin: 30px;
+  margin: 40px;
 }
 
 .filters button {
-  margin: 5px;
   padding: 10px 15px;
+  margin: 5px;
   cursor: pointer;
 }
 
@@ -164,7 +177,7 @@ body.dark-mode {
 }
 
 /* MOBILE */
-@media(max-width:768px) {
+@media (max-width:768px) {
   nav {
     display: none;
     position: absolute;
@@ -173,6 +186,10 @@ body.dark-mode {
     background: #000;
     padding: 15px;
   }
-  nav.active { display: block; }
-  .menu-toggle { display: block; }
-                                         }
+  nav.active {
+    display: block;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  }
