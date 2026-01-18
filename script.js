@@ -1,51 +1,61 @@
-document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for contacting me!');
+// DARK MODE
+document.getElementById("toggle-mode").onclick = () => {
+  document.body.classList.toggle("dark-mode");
+};
+
+// MOBILE MENU
+document.getElementById("menu-toggle").onclick = () => {
+  document.getElementById("nav").classList.toggle("active");
+};
+
+// AUTO SLIDER
+const texts = [
+  "Modern Web Design",
+  "Creative UI Layouts",
+  "Responsive Experiences"
+];
+let index = 0;
+
+setInterval(() => {
+  document.getElementById("slider-text").textContent = texts[index];
+  index = (index + 1) % texts.length;
+}, 3000);
+
+// LIGHTBOX
+document.querySelectorAll(".card img").forEach(img => {
+  img.onclick = () => {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = img.src;
+  };
 });
 
-// Lightbox for gallery
-const images = document.querySelectorAll('.gallery-container img');
-images.forEach(img => {
-    img.addEventListener('click', () => {
-        const overlay = document.createElement('div');
-        overlay.style.position = 'fixed';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.background = 'rgba(0,0,0,0.8)';
-        overlay.style.display = 'flex';
-        overlay.style.alignItems = 'center';
-        overlay.style.justifyContent = 'center';
-        overlay.style.zIndex = '9999';
+document.getElementById("close").onclick = () => {
+  document.getElementById("lightbox").style.display = "none";
+};
 
-        const fullImg = document.createElement('img');
-        fullImg.src = img.src;
-        fullImg.style.maxWidth = '90%';
-        fullImg.style.maxHeight = '90%';
-        fullImg.style.borderRadius = '8px';
-
-        overlay.appendChild(fullImg);
-        document.body.appendChild(overlay);
-
-        overlay.addEventListener('click', () => {
-            overlay.remove();
-        });
-    });
-});
-
-// Scroll animations
-const sections = document.querySelectorAll('section');
-function revealOnScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < triggerBottom) {
-            section.classList.add('visible');
-        } else {
-            section.classList.remove('visible');
-        }
-    });
+// FILTER
+function filterImages(type) {
+  document.querySelectorAll(".card").forEach(card => {
+    card.style.display =
+      type === "all" || card.classList.contains(type)
+        ? "block"
+        : "none";
+  });
 }
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll();
+
+// CONTACT FORM (DEMO)
+document.getElementById("contact-form").onsubmit = e => {
+  e.preventDefault();
+  document.getElementById("form-status").textContent =
+    "Message sent successfully ✅";
+  e.target.reset();
+};
+
+// SCROLL ANIMATION
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".reveal").forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+});
