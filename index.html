@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Portfolio</title>
+  <title>Modern Video Hero Website</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -11,22 +11,24 @@
 
 <body>
 
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
+
 <header>
   <div class="logo">MyBrand</div>
 
-  <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">☰</button>
+  <button id="menu-toggle" class="menu-toggle">☰</button>
 
   <nav id="nav">
     <a href="#home">Home</a>
-    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </nav>
-
-  <button id="toggle-mode" class="btn-toggle" aria-label="Toggle dark mode">🌙</button>
 </header>
 
 <!-- HERO -->
-<section id="home" class="hero reveal video-hero">
+<section id="home" class="hero video-hero">
 
   <div class="video-overlay"></div>
 
@@ -37,32 +39,13 @@
   <div class="hero-content">
     <h1><span id="typing"></span></h1>
     <p>DANIEL NASIR'S ➡◇ ● Clean ● Responsive ● Creative ● Apps ● Website</p>
-    <a href="#gallery" class="btn">Explore</a>
+    <a href="#contact" class="btn">Get Started</a>
   </div>
 
 </section>
 
-<!-- FILTERS -->
-<div class="filters reveal">
-  <button onclick="filterImages('all')">All</button>
-  <button onclick="filterImages('ui')">UI</button>
-  <button onclick="filterImages('web')">Web</button>
-</div>
-
-<!-- GALLERY -->
-<section id="gallery" class="card-grid reveal">
-  <div class="card ui"><img src="images/design1.jpg" alt=""></div>
-  <div class="card web"><img src="images/design2.jpg" alt=""></div>
-  <div class="card ui"><img src="images/design3.jpg" alt=""></div>
-  <div class="card web"><img src="images/design4.jpg" alt=""></div>
-  <div class="card ui"><img src="images/design5.jpg" alt=""></div>
-  <div class="card web"><img src="images/design6.jpg" alt=""></div>
-  <div class="card ui"><img src="images/design7.jpg" alt=""></div>
-  <div class="card web"><img src="images/design8.jpg" alt=""></div>
-</section>
-
 <!-- CONTACT -->
-<section id="contact" class="hero light reveal">
+<section id="contact" class="contact">
   <h2>Contact Me</h2>
 
   <form id="contact-form">
@@ -75,12 +58,6 @@
   <p id="form-status"></p>
 </section>
 
-<!-- LIGHTBOX -->
-<div id="lightbox">
-  <span id="close">×</span>
-  <img id="lightbox-img">
-</div>
-
 <script src="script.js"></script>
 </body>
-  </html>
+</html>
