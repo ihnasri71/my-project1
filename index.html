@@ -3,24 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Portfolio</title>
 
-  <title>Modern Design Portfolio</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Modern portfolio website with gallery, animations, and contact form.">
-  <meta name="author" content="Your Name">
-
-  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-  <div class="Logo">MyBrand</div>
+  <div class="logo">MyBrand</div>
 
   <div class="menu-toggle" id="menu-toggle">☰</div>
 
@@ -33,11 +25,19 @@
   <button id="toggle-mode" class="btn-toggle">🌙</button>
 </header>
 
-<!-- HERO WITH AUTO SLIDER -->
-<section id="home" class="hero reveal">
-  <h1 id="slider-text">DANIEL NASIR'S ➡  Modern Web Design</h1>
-  <p>Clean • Responsive • Creative</p>
-  <a href="#gallery" class="btn">Explore</a>
+<!-- HERO VIDEO -->
+<section id="home" class="hero reveal video-hero">
+
+  <video autoplay muted loop playsinline>
+    <source src="videos/hero.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-content">
+    <h1><span id="typing"></span></h1>
+    <p>Clean • Responsive • Creative</p>
+    <a href="#gallery" class="btn">Explore</a>
+  </div>
+
 </section>
 
 <!-- FILTERS -->
@@ -63,7 +63,6 @@
 <section id="contact" class="hero light reveal">
   <h2>Contact Me</h2>
 
-  <!-- FRONTEND DEMO FORM -->
   <form id="contact-form">
     <input type="text" placeholder="Your Name" required>
     <input type="email" placeholder="Your Email" required>
@@ -82,4 +81,4 @@
 
 <script src="script.js"></script>
 </body>
-</html>
+  </html>
