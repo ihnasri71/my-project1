@@ -1,51 +1,65 @@
-// PRELOADER
-window.addEventListener("load", () => {
-  document.getElementById("preloader").style.display = "none";
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Video Hero Website</title>
 
-// MOBILE MENU
-document.getElementById("menu-toggle").onclick = () => {
-  document.getElementById("nav").classList.toggle("active");
-};
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-// TYPING EFFECT
-const words = [
-  "Modern Web Design",
-  "Creative UI",
-  "Responsive Websites"
-];
+<body>
 
-let wordIndex = 0;
-let charIndex = 0;
-const typing = document.getElementById("typing");
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
 
-function type() {
-  if (charIndex < words[wordIndex].length) {
-    typing.textContent += words[wordIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, 100);
-  } else {
-    setTimeout(erase, 2000);
-  }
-}
+<!-- HEADER -->
+<header>
+  <div class="logo">MyBrand</div>
 
-function erase() {
-  if (charIndex > 0) {
-    typing.textContent = words[wordIndex].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(erase, 50);
-  } else {
-    wordIndex = (wordIndex + 1) % words.length;
-    setTimeout(type, 500);
-  }
-}
+  <button id="menu-toggle" class="menu-toggle">☰</button>
 
-type();
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-// CONTACT FORM (DEMO)
-document.getElementById("contact-form").onsubmit = e => {
-  e.preventDefault();
-  document.getElementById("form-status").textContent =
-    "Message sent successfully ✅";
-  e.target.reset();
-};
+<!-- HERO SECTION -->
+<section id="home" class="hero video-hero">
+
+  <div class="video-overlay"></div>
+
+  <video autoplay muted loop playsinline>
+    <source src="videos/hero.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="hero-content">
+    <h1><span id="typing"></span></h1>
+    <p>Clean • Responsive • Professional</p>
+    <a href="#contact" class="btn">Get Started</a>
+  </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+
+  <form id="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn">Send</button>
+  </form>
+
+  <p id="form-status"></p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
