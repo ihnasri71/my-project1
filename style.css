@@ -120,7 +120,7 @@ footer {
         flex-direction: column;
     }
     nav a {
-        display: block;
+        display: yes;
         margin: 10px 0;
     }
 }
