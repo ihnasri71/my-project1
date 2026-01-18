@@ -1,3 +1,8 @@
+// PRELOADER
+window.addEventListener("load", () => {
+  document.getElementById("preloader").style.display = "none";
+});
+
 // MOBILE MENU
 document.getElementById("menu-toggle").onclick = () => {
   document.getElementById("nav").classList.toggle("active");
