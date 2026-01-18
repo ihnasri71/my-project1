@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -12,6 +15,9 @@ header {
     padding: 20px 40px;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 header .logo {
     font-size: 1.5em;
@@ -22,6 +28,7 @@ nav a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 nav a:hover {
     color: #000;
@@ -31,7 +38,7 @@ nav a:hover {
     padding: 80px 20px;
     background: #f8f8f8;
 }
-.hero h1 {
+.hero h1, .hero h2 {
     font-size: 2.5em;
     margin-bottom: 10px;
 }
@@ -47,10 +54,11 @@ nav a:hover {
     text-decoration: none;
     border-radius: 6px;
     font-weight: 500;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 .btn:hover {
     background: #333;
+    transform: scale(1.05);
 }
 .card-grid {
     display: grid;
@@ -63,11 +71,12 @@ nav a:hover {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card img {
     width: 100%;
     display: block;
+    transition: transform 0.4s ease;
 }
 .card h3 {
     margin: 15px;
@@ -79,7 +88,11 @@ nav a:hover {
     color: #555;
 }
 .card:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.card:hover img {
+    transform: scale(1.1);
 }
 footer {
     text-align: center;
