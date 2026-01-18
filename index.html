@@ -1,89 +1,67 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- BASIC META -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-  background: #fff;
-  color: #000;
-}
+  <!-- TITLE -->
+  <title>Animated Website</title>
 
-/* HEADER */
-header {
-  position: fixed;
-  width: 100%;
-  padding: 15px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  z-index: 1000;
-}
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-nav a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-}
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-.btn-toggle {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #fff;
-}
+<body>
 
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px;
-}
+  <header>
+    <div class="logo">MyBrand</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="toggle-mode" class="btn-toggle">🌙</button>
+  </header>
 
-#home {
-  background-image:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-    url('images/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-}
+  <section id="home" class="hero">
+    <h1>DANIEL NASIR'S → Discover Modern Designs</h1>
+    <p>Clean, elegant, and responsive layouts inspired by top designers.</p>
+    <a href="#gallery" class="btn">Explore Now</a>
+  </section>
 
-/* ABOUT */
-.light {
-  background: #f5f5f5;
-}
+  <section id="about" class="hero light">
+    <h2>About Us</h2>
+    <p>We create stunning, modern designs for websites and applications.</p>
+  </section>
 
-/* BUTTON */
-.btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #ff9800;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-}
+  <section id="gallery" class="card-grid">
+    <div class="card">
+      <img src="images/design1.jpg" alt="Design 1">
+      <h3>Design 1</h3>
+      <p>Description for design 1.</p>
+    </div>
+    <div class="card">
+      <img src="images/design2.jpg" alt="Design 2">
+      <h3>Design 2</h3>
+      <p>Description for design 2.</p>
+    </div>
+    <div class="card">
+      <img src="images/design3.jpg" alt="Design 3">
+      <h3>Design 3</h3>
+      <p>Description for design 3.</p>
+    </div>
+  </section>
 
-/* GALLERY */
-.card-grid {
-  padding: 100px 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
+  <!-- JAVASCRIPT (MUST BE HERE) -->
+  <script src="script.js"></script>
 
-.card {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
+</body>
+      </html>  overflow: hidden;
   box-shadow: 0 10px 20px rgba(0,0,0,.1);
 }
 
