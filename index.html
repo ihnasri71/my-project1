@@ -16,6 +16,7 @@
             <a href='#gallery'>Gallery</a>
             <a href='#contact'>Contact</a>
         </nav>
+        <button id='toggle-mode' class='btn-toggle'>🌙</button>
     </header>
 
     <section id='home' class='hero'>
@@ -43,10 +44,27 @@
     <section id='contact' class='hero'>
         <h2 class='slide-in-left'>Contact Us</h2>
         <p class='slide-in-right'>Get in touch for collaborations and projects.</p>
+        <p>Email: <a href='mailto:Ih.nasri71@gmail.com'>Ih.nasri71@gmail.com</a></p>
+        <p>Phone: <a href='tel:+233200662664'>+233 200 662 664</a></p>
+        <form class='contact-form'>
+            <input type='text' name='name' placeholder='Your Name' required>
+            <input type='email' name='email' placeholder='Your Email' required>
+            <textarea name='message' placeholder='Your Message' required></textarea>
+            <button type='submit'>Send Message</button>
+        </form>
     </section>
 
     <footer>
         <p>&copy; 2026 MyBrand. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Light/Dark mode toggle
+        const toggleBtn = document.getElementById('toggle-mode');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+    </script>
 </body>
 </html>
