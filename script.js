@@ -21,8 +21,7 @@ const typingElement = document.getElementById("typing");
 
 function typeEffect() {
   if (charIndex < typingText[textIndex].length) {
-    typingElement.textContent += typingText[textIndex].charAt(charIndex);
-    charIndex++;
+    typingElement.textContent += typingText[textIndex][charIndex++];
     setTimeout(typeEffect, 100);
   } else {
     setTimeout(eraseEffect, 2000);
@@ -32,8 +31,7 @@ function typeEffect() {
 function eraseEffect() {
   if (charIndex > 0) {
     typingElement.textContent =
-      typingText[textIndex].substring(0, charIndex - 1);
-    charIndex--;
+      typingText[textIndex].substring(0, --charIndex);
     setTimeout(eraseEffect, 50);
   } else {
     textIndex = (textIndex + 1) % typingText.length;
@@ -46,22 +44,23 @@ typeEffect();
 // LIGHTBOX
 document.querySelectorAll(".card img").forEach(img => {
   img.onclick = () => {
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightbox-img").src = img.src;
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
   };
 });
 
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
 document.getElementById("close").onclick = () => {
-  document.getElementById("lightbox").style.display = "none";
+  lightbox.style.display = "none";
 };
 
 // FILTER
 function filterImages(type) {
   document.querySelectorAll(".card").forEach(card => {
     card.style.display =
-      type === "all" || card.classList.contains(type)
-        ? "block"
-        : "none";
+      type === "all" || card.classList.contains(type) ? "block" : "none";
   });
 }
 
@@ -73,11 +72,14 @@ document.getElementById("contact-form").onsubmit = e => {
   e.target.reset();
 };
 
-// SCROLL REVEAL
-window.addEventListener("scroll", () => {
+// SCROLL REVEAL (FIXED)
+function revealOnScroll() {
   document.querySelectorAll(".reveal").forEach(el => {
     if (el.getBoundingClientRect().top < window.innerHeight - 100) {
       el.classList.add("active");
     }
   });
-});
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll(); // run once on load
