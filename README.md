@@ -19,8 +19,8 @@
     </header>
 
     <section id="hero" class="fade-in">
-        <h1>Welcome to My Website</h1>
-        <p>Building websites from scratch is fun!</p>
+        <h1>Welcome to Daniel Nasir Hubs</h1>
+        <p>World🗺 is Round and it goes Around then comes Around for sure!</p>
         <a href="#about" class="btn">Learn More</a>
     </section>
 
@@ -39,8 +39,7 @@
             <img src="images/photo5.jpg" alt="Photo 5">
             <img src="images/photo6.jpg" alt="Photo 6">
         </div>
-    </section>
-
+    </section> 
     <section id="contact" class="fade-in">
         <h2>Contact Me</h2>
         <form>
