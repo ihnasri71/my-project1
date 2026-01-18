@@ -8,18 +8,40 @@ document.getElementById("menu-toggle").onclick = () => {
   document.getElementById("nav").classList.toggle("active");
 };
 
-// AUTO SLIDER
-const texts = [
+// TYPING EFFECT
+const typingText = [
   "Modern Web Design",
-  "Creative UI Layouts",
-  "Responsive Experiences"
+  "Creative UI Experiences",
+  "Responsive Websites"
 ];
-let index = 0;
 
-setInterval(() => {
-  document.getElementById("slider-text").textContent = texts[index];
-  index = (index + 1) % texts.length;
-}, 3000);
+let textIndex = 0;
+let charIndex = 0;
+const typingElement = document.getElementById("typing");
+
+function typeEffect() {
+  if (charIndex < typingText[textIndex].length) {
+    typingElement.textContent += typingText[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeEffect, 100);
+  } else {
+    setTimeout(eraseEffect, 2000);
+  }
+}
+
+function eraseEffect() {
+  if (charIndex > 0) {
+    typingElement.textContent =
+      typingText[textIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseEffect, 50);
+  } else {
+    textIndex = (textIndex + 1) % typingText.length;
+    setTimeout(typeEffect, 500);
+  }
+}
+
+typeEffect();
 
 // LIGHTBOX
 document.querySelectorAll(".card img").forEach(img => {
@@ -51,7 +73,7 @@ document.getElementById("contact-form").onsubmit = e => {
   e.target.reset();
 };
 
-// SCROLL ANIMATION
+// SCROLL REVEAL
 window.addEventListener("scroll", () => {
   document.querySelectorAll(".reveal").forEach(el => {
     if (el.getBoundingClientRect().top < window.innerHeight - 100) {
