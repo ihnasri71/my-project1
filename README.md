@@ -1,58 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Professional Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="logo">MySite</div>
-        <nav>
-            <a href="#hero">Home</a>
-            <a href="#about">About</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+# My Professional Website
 
-    <section id="hero" class="fade-in">
-        <h1>Welcome to Daniel Nasir Hubs</h1>
-        <p>World🗺 is Round and it goes Around then comes Around for sure!</p>
-        <a href="#about" class="btn">Learn More</a>
-    </section>
+## 📌 Project Overview
+This is a fully responsive, modern website built with **HTML**, **CSS**, and **JavaScript**. It includes:
+- Hero section
+- About section
+- Photo gallery with lightbox
+- Contact form
+- Smooth scrolling and animations
+- Custom logo and favicon
 
-    <section id="about" class="fade-in">
-        <h2>About Me</h2>
-        <p>Hello! I'm learning web development and creating awesome projects.</p>
-    </section>
+## ✅ Features
+- Responsive design for mobile and desktop
+- Smooth scroll animations
+- Interactive photo gallery
+- Customizable color palette and branding
 
-    <section id="gallery" class="fade-in">
-        <h2>Photo Gallery</h2>
-        <div class="gallery-container">
-            <img src="images/photo1.jpg" alt="Photo 1">
-            <img src="images/photo2.jpg" alt="Photo 2">
-            <img src="images/photo3.jpg" alt="Photo 3">
-            <img src="images/photo4.jpg" alt="Photo 4">
-            <img src="images/photo5.jpg" alt="Photo 5">
-            <img src="images/photo6.jpg" alt="Photo 6">
-        </div>
-    </section> 
-    <section id="contact" class="fade-in">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+## 🔧 Installation
+1. Download or clone this repository.
+2. Extract the files if downloaded as a ZIP.
+3. Ensure the following files are in the root directory:
+   - `index.html`
+   - `style.css`
+   - `script.js`
+   - `favicon.png`
+   - `logo.png`
+   - `images/` folder with your photos
 
-    <footer>
-        <p>&copy; 2026 MySite. All rights reserved.</p>
-    </footer>
+## 🎨 How to Customize
+### Logo and Favicon
+- Replace `logo.png` with your own logo.
+- Replace `favicon.png` with your own favicon.
+- Update `index.html` header:
+```html
+<img src="logo.png" alt="DN Logo" style="height:50px;">
+<link rel="icon" type="image/png" href="favicon.png">
+```
 
-    <script src="script.js"></script>
-</body>
-</html>
+### Colors and Fonts
+- Edit `style.css` to change colors:
+```css
+-- Primary: #0077b6
+-- Secondary: #023e8a
+-- Accent: #90e0ef
+```
+- Font used: [Poppins](https://fonts.google.com/specimen/Poppins)
+
+### Text Content
+- Update text in `index.html` for Hero, About, and Contact sections.
+
+## 🚀 Deployment on GitHub Pages
+1. Push your files to a **public GitHub repository**.
+2. Go to **Settings → Pages**.
+3. Under **Source**, select `main` branch and `/root`.
+4. Save and wait 1–2 minutes.
+5. Your site will be live at:
+```
+https://<your-username>.github.io/<repository-name>/
+```
+
+## 🙌 Credits
+Developed with ❤️ using HTML, CSS, and JavaScript.
