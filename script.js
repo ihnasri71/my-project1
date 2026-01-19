@@ -1,7 +1,7 @@
-// EMAILJS INIT (REPLACE WITH YOUR PUBLIC KEY)
+// EMAILJS INIT (replace keys)
 emailjs.init("YOUR_PUBLIC_KEY");
 
-// CONTACT FORM EMAIL
+// CONTACT FORM
 document.getElementById("contact-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -28,6 +28,37 @@ function revealOnScroll() {
     }
   });
 }
-
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
+
+// SLIDER
+const track = document.querySelector('.slider-track');
+const slides = document.querySelectorAll('.slider-track img');
+const nextBtn = document.querySelector('.arrow.right');
+const prevBtn = document.querySelector('.arrow.left');
+
+let index = 0;
+let slideWidth = slides[0].offsetWidth + 20;
+
+function slideGallery() {
+  track.style.transform = `translateX(${-index * slideWidth}px)`;
+}
+
+nextBtn.onclick = () => {
+  index++;
+  if (index > slides.length - 3) index = 0;
+  slideGallery();
+};
+
+prevBtn.onclick = () => {
+  index--;
+  if (index < 0) index = slides.length - 3;
+  slideGallery();
+};
+
+setInterval(() => nextBtn.click(), 3000);
+
+window.addEventListener('resize', () => {
+  slideWidth = slides[0].offsetWidth + 20;
+  slideGallery();
+});
