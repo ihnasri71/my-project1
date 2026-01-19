@@ -13,15 +13,15 @@ function filterGallery(category, event) {
   });
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.item').forEach(i => i.classList.add('show'));
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".item").forEach(i => i.classList.add("show"));
 });
 
 /* SCROLL REVEAL */
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('.reveal').forEach(el => {
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".reveal").forEach(el => {
     if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-      el.classList.add('active');
+      el.classList.add("active");
     }
   });
 });
