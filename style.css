@@ -1,0 +1,40 @@
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background: #fff; color: #333; transition: background 0.3s, color 0.3s; }
+.dark-mode { background: #121212; color: #f1f1f1; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+.dark-mode header { background: #1e1e1e; }
+header .logo { font-size: 1.5em; font-weight: 700; }
+nav a { margin-left: 20px; text-decoration: none; color: inherit; font-weight: 500; transition: color 0.3s ease; }
+nav a:hover { color: #0077b6; }
+.btn-toggle { background: none; border: none; font-size: 1.5em; cursor: pointer; }
+.hero { text-align: center; padding: 80px 20px; background: #f8f8f8; }
+.dark-mode .hero { background: #1e1e1e; }
+.hero h1, .hero h2 { font-size: 2.5em; margin-bottom: 10px; }
+.hero p { font-size: 1.2em; margin-bottom: 20px; }
+.btn { display: inline-block; padding: 12px 24px; background: #000; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background 0.3s ease, transform 0.3s ease; }
+.btn:hover { background: #333; transform: scale(1.05); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px; }
+.card { background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; opacity: 0; animation: slideInImage 1.5s forwards; }
+.dark-mode .card { background: #2a2a2a; }
+.card img { width: 100%; display: block; transition: transform 0.4s ease; }
+.card h3 { margin: 15px; font-size: 1.2em; }
+.card p { margin: 0 15px 15px; font-size: 0.95em; color: #555; }
+.dark-mode .card p { color: #ccc; }
+.card:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+.card:hover img { transform: scale(1.1); filter: brightness(1.1); }
+.contact-form { display: flex; flex-direction: column; max-width: 400px; margin: 20px auto; gap: 10px; }
+.contact-form input, .contact-form textarea { padding: 10px; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; }
+.contact-form button { padding: 12px; background: #0077b6; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+footer { text-align: center; padding: 20px; background: #f8f8f8; font-size: 0.9em; }
+.dark-mode footer { background: #1e1e1e; }
+
+/* Animations */
+@keyframes fadeIn { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeIn 2s ease-in-out; }
+@keyframes glow { 0% { text-shadow: 0 0 5px #0077b6; } 50% { text-shadow: 0 0 20px #90e0ef; } 100% { text-shadow: 0 0 5px #0077b6; } }
+.glow { animation: glow 3s ease-in-out infinite; }
+@keyframes slideInLeft { to { opacity: 1; transform: translateX(0); } }
+.slide-in-left { opacity: 0; transform: translateX(-50px); animation: slideInLeft 1.5s forwards; }
+@keyframes slideInRight { to { opacity: 1; transform: translateX(0); } }
+.slide-in-right { opacity: 0; transform: translateX(50px); animation: slideInRight 1.5s forwards; }
+@keyframes slideInImage { to { opacity: 1; transform: translateY(0); } }
