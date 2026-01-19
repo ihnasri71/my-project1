@@ -5,7 +5,8 @@ A modern, responsive portfolio website with hero video, gallery, filters, lightb
 ## Deployment Guide
 1. Upload files to GitHub repository.
 2. Go to Settings > Pages > Enable GitHub Pages.
-3. Your site will be live at https://yourusername.github.io/portfolio
+3. Your site will be live at
+4.  https://d.danielnasir.kesug.com/
 
 ## Screenshots
 ![Create Repo](screenshots/create-repo.png)
