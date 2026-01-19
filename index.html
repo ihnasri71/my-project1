@@ -2,61 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DANIEL NASIR | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>DANIEL NASIR | Professional Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional website by Daniel Nasir" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="no-js">
 
-<header>
-  <div class="logo">DANIEL NASIR</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#work">Work</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<body>
 
-<section id="home" class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content fade">
-    <h1>Welcome to My Website</h1>
-    <p>APPS • PROFESSIONAL WEBSITE • CREATIVE • CLEAN • DATA ANALYSIS</p>
+<!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="videos/hero.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-content">
+    <h1 class="fade-in">Hi, I'm <span>DANIEL NASIR</span></h1>
+    <h2 class="slide-in">Welcome to My Website</h2>
+    <p class="typing">
+      We Offer ● APPS ● PROFESSIONAL WEBSITE ● CREATIVE ● CLEAN ● DATA ANALYSIS
+    </p>
   </div>
 </section>
 
-<section id="work" class="section">
-  <h2 class="fade">Selected Work</h2>
-  <div class="gallery">
-    <img src="images/design1.jpg" class="fade" />
-    <img src="images/design2.jpg" class="fade" />
-    <img src="images/design3.jpg" class="fade" />
-    <img src="images/design4.jpg" class="fade" />
-    <img src="images/design5.jpg" class="fade" />
-    <img src="images/design6.jpg" class="fade" />
-    <img src="images/design7.jpg" class="fade" />
-    <img src="images/design8.jpg" class="fade" />
+<!-- CATEGORIES -->
+<section class="categories">
+  <h2>Phone Categories</h2>
+  <div class="category-grid">
+    <div class="card">
+      <h3>Samsung</h3>
+      <p>S20 • S21 • S22 • S23 • S24 • S25 Ultra</p>
+    </div>
+    <div class="card">
+      <h3>iPhone</h3>
+      <p>14 Pro • 15 Pro • 16 Pro • 17 Pro</p>
+    </div>
   </div>
 </section>
 
-<section id="products" class="section">
-  <h2 class="fade">Products</h2>
-  <p class="fade products-text">
-    Laptops & Mobile Phones<br><br>
-    Samsung Galaxy S20 – S25 Ultra<br>
-    iPhone 14 Pro – iPhone 17 Pro
-  </p>
+<!-- GALLERY -->
+<section class="gallery">
+  <h2>Design Gallery</h2>
+  <div class="slider">
+    <div class="slide-track">
+      <img src="images/design1.jpg">
+      <img src="images/design2.jpg">
+      <img src="images/design3.jpg">
+      <img src="images/design4.jpg">
+      <img src="images/design5.jpg">
+      <img src="images/design6.jpg">
+      <img src="images/design7.jpg">
+      <img src="images/design8.jpg">
+    </div>
+  </div>
 </section>
 
-<section id="contact" class="section">
-  <h2 class="fade">Contact</h2>
-  <p class="fade">
-    WhatsApp:
-    <a href="https://wa.me/233200662664" target="_blank">+233 200 662 664</a>
-  </p>
-</section>
+<!-- WHATSAPP -->
+<a href="https://wa.me/233200662664" class="whatsapp" target="_blank">💬</a>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
