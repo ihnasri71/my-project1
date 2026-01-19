@@ -19,8 +19,14 @@ header {
   background: rgba(0,0,0,0.7);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 12px 20px;
   z-index: 1000;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
 }
 
 header a {
@@ -198,4 +204,4 @@ header a {
     min-width: 260px;
     height: 360px;
   }
-    }
+}
