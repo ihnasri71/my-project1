@@ -1,4 +1,4 @@
-// EMAILJS INIT (replace keys)
+// EMAILJS INIT (replace with your keys)
 emailjs.init("YOUR_PUBLIC_KEY");
 
 // CONTACT FORM
@@ -28,6 +28,7 @@ function revealOnScroll() {
     }
   });
 }
+
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
