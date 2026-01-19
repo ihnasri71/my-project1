@@ -6,9 +6,8 @@
 }
 
 body {
-  background: #000;
-  color: white;
-  overflow-x: hidden;
+  background: #fff;
+  color: #111;
 }
 
 /* HEADER */
@@ -16,29 +15,39 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.7);
+  height: 64px;
+  background: rgba(0,0,0,0.6);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
+  padding: 0 20px;
   z-index: 1000;
 }
 
-.logo img {
-  height: 45px;
-  width: auto;
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-header a {
-  color: white;
-  margin-left: 15px;
+.logo img {
+  height: 36px;
+  max-width: 120px;
+  width: auto;
+  object-fit: contain;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 20px;
   text-decoration: none;
+  font-size: 14px;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 .hero video {
@@ -50,158 +59,106 @@ header a {
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.6);
 }
 
 .hero-content {
   position: absolute;
   inset: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #fff;
   text-align: center;
+  padding: 20px;
 }
 
-.welcome {
-  font-size: 2.5rem;
-  animation: fadeText 4s infinite;
+.hero-content h1 span {
+  color: #00c6ff;
 }
 
-.welcome span {
-  color: #f39c12;
+.fade-text {
+  animation: fadeInOut 4s infinite;
 }
 
-@keyframes fadeText {
-  0% { opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; }
+@keyframes fadeInOut {
+  0% {opacity:0}
+  50% {opacity:1}
+  100% {opacity:0}
 }
 
 /* SERVICES */
 .services {
-  background: #111;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.services ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.services li {
-  border: 1px solid #f39c12;
-  padding: 12px 20px;
-  border-radius: 20px;
+  margin-top: 15px;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 
 /* GALLERY */
 .gallery {
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
-.slider-container {
-  position: relative;
-  max-width: 1200px;
-  margin: 40px auto;
+.slider {
   overflow: hidden;
+  margin-top: 30px;
 }
 
-.slider-track {
+.slide-track {
   display: flex;
-  transition: transform 0.6s ease-in-out;
+  width: calc(250px * 12);
+  animation: scroll 20s linear infinite;
 }
 
-.slider-track img {
-  min-width: 300px;
-  height: 420px;
-  object-fit: cover;
-  margin-right: 20px;
-  border-radius: 12px;
+.slide-track img {
+  width: 250px;
+  margin: 0 10px;
+  border-radius: 10px;
 }
 
-/* ARROWS */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
-  color: white;
-  border: none;
-  font-size: 28px;
-  padding: 10px 14px;
-  cursor: pointer;
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-
-.arrow.left { left: 10px; }
-.arrow.right { right: 10px; }
 
 /* CONTACT */
 .contact {
-  background: #111;
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
+  background: #111;
+  color: #fff;
 }
 
-.contact form {
-  max-width: 400px;
-  margin: auto;
-}
-
-.contact input,
-.contact textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-}
-
-.contact button {
-  width: 100%;
-  padding: 12px;
-  background: #f39c12;
-  border: none;
-  cursor: pointer;
-}
-
-/* WHATSAPP */
 .whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
   background: #25D366;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 26px;
-  color: white;
+  color: #fff;
   text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
 }
 
-/* SCROLL REVEAL */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+/* FOOTER */
+footer {
+  padding: 15px;
+  text-align: center;
+  background: #000;
+  color: #aaa;
+  font-size: 13px;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .slider-track img {
-    min-width: 260px;
-    height: 360px;
+  .logo img {
+    height: 30px;
+    max-width: 100px;
+  }
+
+  .slide-track img {
+    width: 200px;
   }
 }
