@@ -1,65 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Video Hero Website</title>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+/* PRELOADER */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
-<body>
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #333;
+  border-top: 5px solid orange;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
 
-<!-- PRELOADER -->
-<div id="preloader">
-  <div class="spinner"></div>
-</div>
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 
-<!-- HEADER -->
-<header>
-  <div class="logo">MyBrand</div>
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+  z-index: 10;
+}
 
-  <button id="menu-toggle" class="menu-toggle">☰</button>
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
 
-  <nav id="nav">
-    <a href="#home">Home</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+}
 
-<!-- HERO SECTION -->
-<section id="home" class="hero video-hero">
+/* HERO */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
 
-  <div class="video-overlay"></div>
+.hero video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  <video autoplay muted loop playsinline>
-    <source src="videos/hero.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
 
-  <div class="hero-content">
-    <h1><span id="typing"></span></h1>
-    <p>Clean • Responsive • Professional</p>
-    <a href="#contact" class="btn">Get Started</a>
-  </div>
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
 
-</section>
+.hero-content h1 {
+  font-size: 48px;
+}
 
-<!-- CONTACT SECTION -->
-<section id="contact" class="contact">
-  <h2>Contact Me</h2>
+.btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: orange;
+  color: #000;
+  text-decoration: none;
+  border-radius: 30px;
+}
 
-  <form id="contact-form">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message" required></textarea>
-    <button type="submit" class="btn">Send</button>
-  </form>
+/* CONTACT */
+.contact {
+  padding: 80px 20px;
+  text-align: center;
+}
 
-  <p id="form-status"></p>
-</section>
+.contact form {
+  max-width: 400px;
+  margin: auto;
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+}
+
+.contact button {
+  padding: 12px;
+  width: 100%;
+  background: orange;
+  border: none;
+  cursor: pointer;
+}
