@@ -2,46 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DANIEL NASIR | Professional Portfolio</title>
+  <title>DANIEL NASIR | Professional Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional website by Daniel Nasir" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+  <meta name="description" content="Professional websites, apps, clean UI, data analysis" />
 
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
 <body>
 
 <!-- HERO -->
 <section class="hero">
-  <video autoplay muted loop playsinline>
+  <video autoplay muted loop playsinline class="hero-video">
     <source src="videos/hero.mp4" type="video/mp4">
   </video>
 
   <div class="hero-content">
     <h1 class="fade-in">Hi, I'm <span>DANIEL NASIR</span></h1>
-    <h2 class="slide-in">Welcome to My Website</h2>
-    <p class="typing">
-      We Offer ● APPS ● PROFESSIONAL WEBSITE ● CREATIVE ● CLEAN ● DATA ANALYSIS
+    <h2 class="fade-in-delay">
+      Welcome to My Website<br>
+      We Offered You 👇
+    </h2>
+    <p class="services">
+      ● APPS ● PROFESSIONAL WEBSITE ● CREATIVE ● CLEAN ● DATA ANALYSIS
     </p>
+
+    <a class="whatsapp-btn"
+       href="https://wa.me/233200662664"
+       target="_blank">
+      WhatsApp Me
+    </a>
   </div>
 </section>
 
-<!-- CATEGORIES -->
-<section class="categories">
-  <h2>Phone Categories</h2>
-  <div class="category-grid">
-    <div class="card">
-      <h3>Samsung</h3>
-      <p>S20 • S21 • S22 • S23 • S24 • S25 Ultra</p>
-    </div>
-    <div class="card">
-      <h3>iPhone</h3>
-      <p>14 Pro • 15 Pro • 16 Pro • 17 Pro</p>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="gallery">
+<!-- GALLERY SLIDER -->
+<section class="slider-section">
   <h2>Design Gallery</h2>
   <div class="slider">
     <div class="slide-track">
@@ -57,8 +52,30 @@
   </div>
 </section>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/233200662664" class="whatsapp" target="_blank">💬</a>
+<!-- PHONES -->
+<section class="phones-section">
+
+  <h2>Our Phone Categories</h2>
+
+  <h3>Samsung Galaxy</h3>
+  <div class="phone-grid">
+    <div class="phone-card"><img src="images/samsung/s20.jpg"><span>S20</span></div>
+    <div class="phone-card"><img src="images/samsung/s21.jpg"><span>S21</span></div>
+    <div class="phone-card"><img src="images/samsung/s22.jpg"><span>S22</span></div>
+    <div class="phone-card"><img src="images/samsung/s23.jpg"><span>S23</span></div>
+    <div class="phone-card"><img src="images/samsung/s24.jpg"><span>S24</span></div>
+    <div class="phone-card"><img src="images/samsung/s25-ultra.jpg"><span>S25 Ultra</span></div>
+  </div>
+
+  <h3>Apple iPhone</h3>
+  <div class="phone-grid">
+    <div class="phone-card"><img src="images/iphone/iphone14-pro.jpg"><span>iPhone 14 Pro</span></div>
+    <div class="phone-card"><img src="images/iphone/iphone15-pro.jpg"><span>iPhone 15 Pro</span></div>
+    <div class="phone-card"><img src="images/iphone/iphone16-pro.jpg"><span>iPhone 16 Pro</span></div>
+    <div class="phone-card"><img src="images/iphone/iphone17-pro.jpg"><span>iPhone 17 Pro</span></div>
+  </div>
+
+</section>
 
 <script src="js/script.js"></script>
 </body>
