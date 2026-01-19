@@ -25,14 +25,14 @@ body {
 }
 
 /* VERY SMALL LOGO */
-.logo {
+.text {
   height: 40px;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 
-.logo img {
+.content text {
   height: 24px !important;
   max-width: 80px !important;
   width: auto !important;
